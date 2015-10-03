@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geolocator.Plugin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace AppDionisio.Views
         }
         public async void btCheckinAvaliarBalada_Clicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new CheckinPage());
-        }
+            await Navigation.PushAsync(new CheckinPage());            
+        }        
     }
 }
