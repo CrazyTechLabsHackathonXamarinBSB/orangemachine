@@ -1,4 +1,5 @@
 ﻿using AppDionisio.Views;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace AppDionisio
 {
     public class App : Application
     {
+
+        public static MobileServiceClient MobileService = new MobileServiceClient(
+            "https://dionisio.azure-mobile.net/",
+            "xXVYABXIPgAfTKpqfKJaVIzrGqLerS25"
+        );
+
         public App()
         {
             // The root page of your application
