@@ -39,6 +39,7 @@
     <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Models\Detalhe.cs" />
     <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\EventosList.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Usuario_Evento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
