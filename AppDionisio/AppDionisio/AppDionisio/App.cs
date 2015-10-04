@@ -1,4 +1,5 @@
-﻿using AppDionisio.Views;
+﻿using AppDionisio.Models;
+using AppDionisio.Views;
 using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace AppDionisio
             "https://dionisio.azure-mobile.net/",
             "xXVYABXIPgAfTKpqfKJaVIzrGqLerS25"
         );
+
+        public static Usuario UsuarioLogado { get; set; }
 
         public App()
         {

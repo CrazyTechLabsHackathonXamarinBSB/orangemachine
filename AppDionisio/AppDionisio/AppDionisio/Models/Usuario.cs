@@ -1,38 +1,101 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AppDionisio.Models
 {
-    public class Usuario
+    public class Usuario : BaseModel
     {
         public string Id
         {
             get { return _Id; }
-            set { _Id = value; }
-        }private string _Id;
+
+            set
+            {
+                if (value != this._Id)
+                {
+                    this._Id = value;
+                    NotifyPropertyChanged("Id");
+                }
+            }
+        }
+        private string _Id;
         public string Nome
         {
             get { return _Nome; }
-            set { _Nome = value; }
-        }private string _Nome;
+
+            set
+            {
+                if (value != this._Nome)
+                {
+                    this._Nome = value;
+                    NotifyPropertyChanged("Nome");
+                }
+            }
+        }
+        private string _Nome;
         public string Email
         {
             get { return _Email; }
-            set { _Email = value; }
-        }private string _Email;
+
+            set
+            {
+                if (value != this._Email)
+                {
+                    this._Email = value;
+                    NotifyPropertyChanged("Email");
+                }
+            }
+        }
+        private string _Email;
         public string Senha
         {
             get { return _Senha; }
-            set { _Senha = value; }
+
+            set
+            {
+                if (value != this._Senha)
+                {
+                    this._Senha = value;
+                    NotifyPropertyChanged("Senha");
+                }
+            }
         }private string _Senha;
+
+        [JsonIgnore]
+        private string _ConfirmarSenha;
+        [JsonIgnore]
+        public string ConfirmarSenha
+        {
+            get { return _ConfirmarSenha; }
+
+            set
+            {
+                if (value != this._ConfirmarSenha)
+                {
+                    this._ConfirmarSenha = value;
+                    NotifyPropertyChanged("ConfirmarSenha");
+                }
+            }
+        }
+        
         public string Facebook
         {
             get { return _Facebook; }
-            set { _Facebook = value; }
-        }private string _Facebook;
 
+            set
+            {
+                if (value != this._Facebook)
+                {
+                    this._Facebook = value;
+                    NotifyPropertyChanged("Facebook");
+                }
+            }
+        }
+        private string _Facebook;
     }
 }

@@ -11,11 +11,11 @@
       <StackLayout Orientation="Vertical">
         <StackLayout Padding="10,10,10,5" Orientation="Vertical">
           <Label Text="Login" TextColor="Black"></Label>
-          <Entry x:Name="LoginEntry" TextColor="Black" Placeholder="Digite seu login" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="LoginEntry" TextColor="Black" Placeholder="Digite seu login" BackgroundColor="#FFFFFF" Text="{Binding Email, Mode=TwoWay}"></Entry>
         </StackLayout>
         <StackLayout Padding="10,0,10,10" Orientation="Vertical">
           <Label Text="Senha" TextColor="Black" ></Label>
-          <Entry x:Name="SenhaEntry" TextColor="Black" Placeholder="Digite sua senha" IsPassword="True" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="SenhaEntry" TextColor="Black" Placeholder="Digite sua senha" IsPassword="True" BackgroundColor="#FFFFFF" Text="{Binding Senha, Mode=TwoWay}"></Entry>
         </StackLayout>
         <StackLayout Padding="10,5,10,10">
           <Button x:Name="LoginButton"  FontAttributes="Bold" Clicked="LoginButton_OnClicked" 

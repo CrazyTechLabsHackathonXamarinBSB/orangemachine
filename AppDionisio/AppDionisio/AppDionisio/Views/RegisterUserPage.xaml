@@ -2,38 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDionisio.Views.RegisterUserPage" BackgroundColor="#FF6103" Padding="5,10,5,10">
-  <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"
+    <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical"
                Spacing="15" BackgroundColor="#FFF">
-    <StackLayout Padding="10,10,10,10" Orientation="Vertical" BackgroundColor="#FF6103">
-      <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>      
-    </StackLayout>
-    <ScrollView>
-      <StackLayout Orientation="Vertical">
-        <StackLayout Padding="10,10,10,10" Orientation="Vertical">
-          <Label Text="Nome" TextColor="Black"></Label>
-          <Entry x:Name="TxtNomEntry" TextColor="Black" Placeholder="Digite seu login" BackgroundColor="#FFF"></Entry>
+        <StackLayout Padding="10,10,10,10" Orientation="Vertical" BackgroundColor="#FF6103">
+            <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10" Orientation="Vertical">
-          <Label Text="Login(E-Mail)" TextColor="Black"></Label>
-          <Entry x:Name="TxtLoginEntry" TextColor="Black" Placeholder="Email@Email.com"></Entry>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-          <Label Text="Senha" TextColor="Black"></Label>
-          <Entry x:Name="TxtSenhaEntry" IsPassword="True" TextColor="Black" Placeholder="Senha"></Entry>
-        </StackLayout>
-        <StackLayout Padding="10,10,10,10" Orientation="Vertical">
-          <Label Text="ConfirmaSenha" TextColor="Black"></Label>
-          <Entry x:Name="TxtConfirmeSenhaEntry" IsPassword="True" TextColor="Black" Placeholder="Confirmar Senha"></Entry>
-        </StackLayout>
-        <StackLayout Padding="10,10,10,10">
-          <Button x:Name="SalvarButton" FontAttributes="Bold" Clicked="SalvarButton_OnClicked" 
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Padding="10,10,10,10" Orientation="Vertical">
+                    <Label Text="Nome" TextColor="Black"></Label>
+                    <Entry x:Name="TxtNomEntry" TextColor="Black" Placeholder="Digite seu login" BackgroundColor="#FFF" Text="{Binding Nome, Mode=TwoWay}"></Entry>
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10" Orientation="Vertical">
+                    <Label Text="Login(E-Mail)" TextColor="Black"></Label>
+                    <Entry x:Name="TxtLoginEntry" TextColor="Black" Placeholder="Email@Email.com" Text="{Binding Email, Mode=TwoWay}"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Label Text="Senha" TextColor="Black"></Label>
+                    <Entry x:Name="TxtSenhaEntry" IsPassword="True" TextColor="Black" Placeholder="Senha" Text="{Binding Senha, Mode=TwoWay}"></Entry>
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10" Orientation="Vertical">
+                    <Label Text="ConfirmaSenha" TextColor="Black"></Label>
+                    <Entry x:Name="TxtConfirmeSenhaEntry" IsPassword="True" TextColor="Black" Placeholder="Confirmar Senha" Text="{Binding ConfirmarSenha, Mode=TwoWay}"></Entry>
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10">
+                    <Button x:Name="SalvarButton" FontAttributes="Bold" Clicked="SalvarButton_OnClicked" 
                   BackgroundColor="#FF6103" Text="Salvar" HorizontalOptions="FillAndExpand"></Button>
-        </StackLayout>
-        <StackLayout Padding="10,10,10,10">
-          <Button x:Name="CancelarButton" FontAttributes="Bold" Clicked="CancelarButton_OnClicked"
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10">
+                    <Button x:Name="CancelarButton" FontAttributes="Bold" Clicked="CancelarButton_OnClicked"
                   BackgroundColor="Silver" Text="Cancelar" HorizontalOptions="FillAndExpand"></Button>
-        </StackLayout>
-      </StackLayout>
-    </ScrollView>
-  </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
 </ContentPage>
