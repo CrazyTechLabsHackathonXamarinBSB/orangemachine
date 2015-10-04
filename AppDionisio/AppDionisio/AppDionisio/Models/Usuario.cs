@@ -19,7 +19,7 @@ namespace AppDionisio.Models
                 if (value != this._Id)
                 {
                     this._Id = value;
-                    NotifyPropertyChanged("Id");
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -33,7 +33,7 @@ namespace AppDionisio.Models
                 if (value != this._Nome)
                 {
                     this._Nome = value;
-                    NotifyPropertyChanged("Nome");
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace AppDionisio.Models
                 if (value != this._Email)
                 {
                     this._Email = value;
-                    NotifyPropertyChanged("Email");
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace AppDionisio.Models
                 if (value != this._Senha)
                 {
                     this._Senha = value;
-                    NotifyPropertyChanged("Senha");
+                    NotifyPropertyChanged();
                 }
             }
         }private string _Senha;
@@ -78,7 +78,7 @@ namespace AppDionisio.Models
                 if (value != this._ConfirmarSenha)
                 {
                     this._ConfirmarSenha = value;
-                    NotifyPropertyChanged("ConfirmarSenha");
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -92,7 +92,7 @@ namespace AppDionisio.Models
                 if (value != this._Facebook)
                 {
                     this._Facebook = value;
-                    NotifyPropertyChanged("Facebook");
+                    NotifyPropertyChanged();
                 }
             }
         }

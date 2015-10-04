@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDionisio.Views.CreateEventPage" BackgroundColor="#FF6103" Padding="5,10,5,10"> 
+             x:Class="AppDionisio.Views.CreateEventPage" BackgroundColor="#FF6103" Padding="5,10,5,10">
     <StackLayout Orientation="Vertical" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
              Spacing="15" BackgroundColor="#FFF">
         <StackLayout Orientation="Vertical" Padding="10,10,10,10" BackgroundColor="#FF6103">
@@ -11,50 +11,50 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Nome" TextColor="Black"></Label>
-                    <Entry x:Name="NameEntry" TextColor="Black" Placeholder="Nome do Evento" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="NameEntry" TextColor="Black" Placeholder="Nome do Evento" BackgroundColor="#FFFFFF" Text="{Binding Nome, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Logradouro" TextColor="Black"></Label>
-                    <Entry x:Name="LogradouroEntry" TextColor="Black" Placeholder="Logradouro" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="LogradouroEntry" TextColor="Black" Placeholder="Logradouro" BackgroundColor="#FFFFFF" Text="{Binding Logradouro, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Numero" TextColor="Black"></Label>
-                    <Entry x:Name="NumeroEntry" TextColor="Black" Placeholder="Número" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="NumeroEntry" TextColor="Black" Placeholder="Número" BackgroundColor="#FFFFFF" Text="{Binding Numero, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Complemento" TextColor="Black"></Label>
-                    <Entry x:Name="ComplementoEntry" TextColor="Black" Placeholder="Complemento" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="ComplementoEntry" TextColor="Black" Placeholder="Complemento" BackgroundColor="#FFFFFF" Text="{Binding Complemento, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Bairro" TextColor="Black"></Label>
-                    <Entry x:Name="BairroEntry" TextColor="Black" Placeholder="Bairro" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="BairroEntry" TextColor="Black" Placeholder="Bairro" BackgroundColor="#FFFFFF" Text="{Binding Bairro, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Cidade" TextColor="Black"></Label>
-                    <Entry x:Name="CidadeEntry" TextColor="Black" Placeholder="Cidade" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="CidadeEntry" TextColor="Black" Placeholder="Cidade" BackgroundColor="#FFFFFF" Text="{Binding Cidade, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="UF" TextColor="Black"></Label>
-                    <Entry x:Name="UFEntry" TextColor="Black" Placeholder="UF" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="UFEntry" TextColor="Black" Placeholder="UF" BackgroundColor="#FFFFFF" Text="{Binding Estado, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="CEP" TextColor="Black"></Label>
-                    <Entry x:Name="CEPEntry" TextColor="Black" Placeholder="CEP" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="CEPEntry" TextColor="Black" Placeholder="CEP" BackgroundColor="#FFFFFF" Text="{Binding CEP, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Latitude" TextColor="Black"></Label>
-                    <Entry x:Name="LatitudeEntry" TextColor="Black" Placeholder="Latitude" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="LatitudeEntry" TextColor="Black" Placeholder="Latitude" BackgroundColor="#FFFFFF" Text="{Binding Latitude, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Longitude" TextColor="Black"></Label>
-                    <Entry x:Name="LongitudeEntry" TextColor="Black" Placeholder="Longitude" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="LongitudeEntry" TextColor="Black" Placeholder="Longitude" BackgroundColor="#FFFFFF" Text="{Binding Longitude, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,5" Orientation="Vertical">
                     <Label Text="Descricao" TextColor="Black"></Label>
-                    <Entry x:Name="descricaoEntry" TextColor="Black" Placeholder="Descrição do evento" BackgroundColor="#FFFFFF"></Entry>
+                    <Entry x:Name="descricaoEntry" TextColor="Black" Placeholder="Descrição do evento" BackgroundColor="#FFFFFF" Text="{Binding Descricao, Mode=TwoWay}"></Entry>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-                    <Button x:Name="SalvarEventoButton" FontAttributes="Bold" BackgroundColor="#FF6103" HorizontalOptions="FillAndExpand" Text="Salvar" Clicked="SalvarEventoButton_OnClickedo_OnClicked"></Button>
+                    <Button x:Name="SalvarEventoButton" FontAttributes="Bold" BackgroundColor="#FF6103" HorizontalOptions="FillAndExpand" Text="Salvar" Clicked="SalvarEventoButton_OnClicked"></Button>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" Padding="10,10,10,10">
                     <Button x:Name="Cancelar" FontAttributes="Bold" BackgroundColor="Silver" HorizontalOptions="FillAndExpand" Text="Cancelar" Clicked="CancelarEventoButton_OnClickedOnClicked"></Button>

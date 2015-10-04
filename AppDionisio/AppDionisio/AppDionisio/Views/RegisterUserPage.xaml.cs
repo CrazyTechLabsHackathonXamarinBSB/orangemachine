@@ -17,8 +17,14 @@ namespace AppDionisio.Views
         public RegisterUserPage()
         {
             InitializeComponent();
-            this.Usuario = new Usuario() { Facebook = String.Empty};
+            InitializeContext();
         }
+
+        private void InitializeContext()
+        {
+            this.Usuario = new Usuario() { Facebook = String.Empty };
+        }
+
         public Usuario Usuario
         {
             get
@@ -33,6 +39,17 @@ namespace AppDionisio.Views
 
         private async void SalvarButton_OnClicked(object sender, EventArgs e)
         {
+            if (!this.Validar())
+                await this.DisplayAlert("Atenção", "Revise os campos!", "Ok");
+            else
+            {
+                await todoTableUsuario.InsertAsync(this.Usuario);
+                await Navigation.PushAsync(new MainPage());
+            }
+        }
+
+        private bool Validar()
+        {
             var retorno = true;
 
             if (String.IsNullOrEmpty(this.Usuario.Email))
@@ -43,16 +60,10 @@ namespace AppDionisio.Views
                 retorno = false;
             if (String.IsNullOrEmpty(this.Usuario.ConfirmarSenha))
                 retorno = false;
-           if (String.IsNullOrEmpty(this.Usuario.Senha) || !this.Usuario.Senha.Equals(this.Usuario.ConfirmarSenha))
+            if (String.IsNullOrEmpty(this.Usuario.Senha) || !this.Usuario.Senha.Equals(this.Usuario.ConfirmarSenha))
                 retorno = false;
 
-            if (!retorno)
-                await this.DisplayAlert("Atenção", "Revise os campos!", "Ok");
-            else
-            {
-                await todoTableUsuario.InsertAsync(this.Usuario);
-                await Navigation.PushAsync(new MainPage());
-            }
+            return retorno;
         }
 
         private async void CancelarButton_OnClicked(object sender, EventArgs e)
