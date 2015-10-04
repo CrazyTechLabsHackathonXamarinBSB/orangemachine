@@ -1,9 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDionisio.Views.MainPage">
-    <StackLayout Orientation="Vertical">
-        <Button Text="Criar Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btCriarBalada_Clicked" />
-        <Button Text="Check-in/Avaliar Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btCheckinAvaliarBalada_Clicked" />
+             x:Class="AppDionisio.Views.MainPage" BackgroundColor="#FF6103" Padding="5,10,5,10">
+    <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" 
+               Spacing="15" BackgroundColor="#FFFFFF">
+        <!--<ListView x:Name="list" ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected" RowHeight="55">-->
+        <!--<ListView x:Name="list" ItemTapped="OnItemSelected" RowHeight="55">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="t1" LineBreakMode="TailTruncation"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Text="t2" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                            <Button Text="..." HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <StackLayout Orientation="Vertical">
+            <Button Text="Criar Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btCriarBalada_Clicked" />
+            <Button Text="Check-in/Avaliar Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="btCheckinAvaliarBalada_Clicked" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>
