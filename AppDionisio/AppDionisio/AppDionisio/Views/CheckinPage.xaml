@@ -2,66 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDionisio.Views.CheckinPage" BackgroundColor="#FF6103" Padding="5,10,5,10">
-  <StackLayout Orientation="Vertical" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+    <StackLayout Orientation="Vertical" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                Spacing="15" BackgroundColor="#FFF">
-    <StackLayout Orientation="Vertical" Padding="10,10,10,10" BackgroundColor="#FF6103">
-      <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>
-    </StackLayout>
-    <ScrollView>
-      <StackLayout Orientation="Vertical">
-        <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
-          <Label Text="Nome do evento :" TextColor="Black"></Label>
-          <Label x:Name="LblNome" Text="{Binding Nome}" TextColor="Black"></Label>
+        <StackLayout Orientation="Vertical" Padding="10,10,10,10" BackgroundColor="#FF6103">
+            <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
-          <Label Text="Logradouro :" TextColor="Black"></Label>
-          <Label x:Name="LblLogradouro" Text="{Binding Logradouro}" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
-          <Label Text="Bairro :" TextColor="Black"></Label>
-          <Label x:Name="LblBairro" TextColor="Black" Text="Exibir Bairro"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Cidade :" TextColor="Black"></Label>
-          <Label x:Name="LblCidade" Text="Exibir Cidade" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Estado :" TextColor="Black"></Label>
-          <Label x:Name="LblEstado" Text="Exibir Estado" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Criador do Evento :" TextColor="Black"></Label>
-          <Label x:Name="LblNomeCriadoEvento" Text="Exibir Nome Autor" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Qtd Checkins :" TextColor="Black"></Label>
-          <Label x:Name="LblQtdCheckins" Text="Exibir Qtd Checkins" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Qtd Likes :" TextColor="Black"></Label>
-          <Label x:Name="LblQtdLikes" Text="Exibir Qtd Likes" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-          <Label Text="Qtd No-Likes :" TextColor="Black"></Label>
-          <Label x:Name="LblQtdDesLikes" Text="Exibir Qtd DesLikes" TextColor="Black"></Label>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-          <Button x:Name="CheckinButton" FontAttributes="Bold" BackgroundColor="#FF6103" Text="Check-In"
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                    <Label Text="Nome do evento :" TextColor="Black"></Label>
+                    <Entry TextColor="Black" Placeholder="Nome do Evento" BackgroundColor="#FFFFFF" Text="{Binding Nome, Mode=TwoWay}"></Entry>
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                    <Label Text="Local :" TextColor="Black"></Label>
+                    <Entry TextColor="Black" Placeholder="espaço por que estava bugado 1234564 aagafgfa" BackgroundColor="#FFFFFF" Text="{Binding Local, Mode=TwoWay}"></Entry>
+                </StackLayout> 
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Label Text="Qtd Checkins :" TextColor="Black"></Label>
+                    <Label x:Name="LblQtdCheckins" Text="{Binding Checkins, Mode=TwoWay}" TextColor="Black"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Label Text="Qtd Likes :" TextColor="Black"></Label>
+                    <Label x:Name="LblQtdLikes" Text="{Binding Likes, Mode=TwoWay}" TextColor="Black"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Label Text="Qtd No-Likes :" TextColor="Black"></Label>
+                    <Label x:Name="LblQtdDesLikes" Text="{Binding Deslike, Mode=TwoWay}" TextColor="Black"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="CheckinButton" FontAttributes="Bold" BackgroundColor="#FF6103" Text="Check-In"
                   Clicked="CheckinButton_OnClicked"></Button>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-          <Button x:Name="LikeButton" FontAttributes="Bold" BackgroundColor="Silver" Text="Like"
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="LikeButton" FontAttributes="Bold" BackgroundColor="Silver" Text="Like"
                   Clicked="LikeButton_OnClicked"></Button>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-          <Button x:Name="NoLike" FontAttributes="Bold" BackgroundColor="#FF6103" Text="No-Like"
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="NoLike" FontAttributes="Bold" BackgroundColor="#FF6103" Text="No-Like"
                   Clicked="NoLike_OnClicked"></Button>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-          <Button x:Name="Cancelar" FontAttributes="Bold" BackgroundColor="Silver" Text="Cancelar"
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="Cancelar" FontAttributes="Bold" BackgroundColor="Silver" Text="Cancelar"
                   Clicked="Cancelar_OnClicked"></Button>
-        </StackLayout>
-      </StackLayout>
-    </ScrollView>
-  </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
 </ContentPage>

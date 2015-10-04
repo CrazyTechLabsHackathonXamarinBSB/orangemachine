@@ -28,5 +28,22 @@ namespace AppDionisio.Models
             get { return _Status; }
             set { _Status = value; }
         }private int _Status;
+
+        public StatatusEnum StatusEnum
+        {
+            get
+            {
+                return ((StatatusEnum)this.Status);
+            }
+        }
+
+
+    }
+
+    public enum StatatusEnum
+    {
+        Defaut = 0,
+        Like = 1,
+        Deslike = 2
     }
 }

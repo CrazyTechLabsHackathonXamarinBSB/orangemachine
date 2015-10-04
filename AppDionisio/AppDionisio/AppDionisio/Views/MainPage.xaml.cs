@@ -1,4 +1,5 @@
 ﻿using AppDionisio.Models;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,58 +13,28 @@ namespace AppDionisio.Views
 {
     public partial class MainPage : ContentPage
     {
+        private IMobileServiceTable<Evento> todoTableEvento = App.MobileService.GetTable<Evento>();
+        public ObservableCollection<EventosItem> ListaItemEventos
+        {
+            get
+            {
+                return this.list.ItemsSource as ObservableCollection<EventosItem>;
+            }
+            set
+            {
+                this.list.ItemsSource = value;
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
-            var listaEventos = new ObservableCollection<EventosItem>();
-
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do José", KM = "0.001 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do XPTO", KM = "0.320 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do TATA", KM = "0.090 KM" });
-            listaEventos.Add(new EventosItem() { Nome = "Balado do Morblou", KM = "0.070 KM" });
-
-            this.list.ItemsSource = listaEventos;
+            this.ListaItemEventos = new ObservableCollection<EventosItem>();
+            this.PopularListaDeEventos();
         }
 
-        public async void OnItemSelected(object sender, EventArgs args)
+        public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
-            await Navigation.PushAsync(new CheckinPage());
+            await Navigation.PushAsync(new CheckinPage(((EventosItem)args.Item).IdEvento));
         }
 
         private async void CadastrarEventoButton_OnClicked(object sender, EventArgs e)
@@ -74,6 +45,28 @@ namespace AppDionisio.Views
         private async void SairEventoButton_OnClickedOnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
+        }
+        private async Task PopularListaDeEventos()
+        {
+
+            this.list.ItemsSource = null;
+            var listaEventos = new ObservableCollection<EventosItem>();
+            this.list.ItemsSource = listaEventos;
+            //TODO: Filtrar...
+            var eventos = await todoTableEvento.ToCollectionAsync();
+            if (eventos.Any())
+            {
+                foreach (var item in eventos)
+                {
+                    var eventoItem = new EventosItem()
+                    {
+                        IdEvento = item.Id,
+                        Nome = item.Nome,
+                        KM = "Calcular ..."
+                    };
+                    listaEventos.Add(eventoItem);
+                }
+            }
         }
     }
 }
