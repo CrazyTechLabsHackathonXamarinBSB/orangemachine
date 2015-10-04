@@ -14,13 +14,23 @@ namespace AppDionisio.Views
         {
             InitializeComponent();
         }
-        public async void OnButtonClicked(object sender, EventArgs args)
+        
+        private async void LoginButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            if (LoginButton.Text == "" || SenhaEntry.Text == "")
+                await this.DisplayAlert("Atenção", "Campos obirgatórios não preenchidos", "Ok");
+            else
+                await Navigation.PushAsync(new MainPage());
         }
-        public async void OnButton2Clicked(object sender, EventArgs args)
+
+        private void CriarContaButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterUserPage());
+            throw new NotImplementedException();
+        }
+
+        private void RegistrarButton_OnClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
