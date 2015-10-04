@@ -2,5 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDionisio.Views.LoginPage">
-    <Button Text="Mapa de Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="OnButtonClicked" />
+    <StackLayout Orientation="Vertical">
+        <Button Text="Mapa de Balada" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="OnButtonClicked" />
+        <Button Text="Registrar Usuário" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="OnButton2Clicked" />
+    </StackLayout>
 </ContentPage>

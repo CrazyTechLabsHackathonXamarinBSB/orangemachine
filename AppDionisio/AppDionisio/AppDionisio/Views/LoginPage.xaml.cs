@@ -18,5 +18,9 @@ namespace AppDionisio.Views
         {
             await Navigation.PushAsync(new MainPage());
         }
+        public async void OnButton2Clicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new RegisterUserPage());
+        }
     }
 }
