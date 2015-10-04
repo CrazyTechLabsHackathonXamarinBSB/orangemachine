@@ -5,29 +5,43 @@
     <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" 
                Spacing="15" BackgroundColor="#FFFFFF">
         <!--<ListView x:Name="list" ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected" RowHeight="55">-->
+        <StackLayout Orientation="Vertical" Padding="10,10,10,10" BackgroundColor="#FF6103">
+            <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>
+        </StackLayout>
         <ScrollView>
-            <ListView x:Name="list" RowHeight="55" ItemTapped="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="40"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <ContentView>
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" Font="Bold, Medium"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-                                </ContentView>
-                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding KM}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout>
+                <StackLayout>
+                    <ListView x:Name="list" RowHeight="55" ItemTapped="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <ContentView>
+                                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" Font="Bold, Medium"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                                        </ContentView>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding KM}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="CadastrarEvento" FontAttributes="Bold"  Clicked="CadastrarEventoButton_OnClicked"
+                        BackgroundColor="#FF6103" Text="Cadastrar " HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Button x:Name="Sair" FontAttributes="Bold" BackgroundColor="Silver" HorizontalOptions="FillAndExpand" Text="Sair" Clicked="SairEventoButton_OnClickedOnClicked"></Button>
+                </StackLayout>
+            </StackLayout>
         </ScrollView>
     </StackLayout>
 </ContentPage>
