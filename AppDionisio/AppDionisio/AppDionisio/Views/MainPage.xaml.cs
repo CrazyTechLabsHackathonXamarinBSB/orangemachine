@@ -14,21 +14,19 @@ namespace AppDionisio.Views
     public partial class MainPage : ContentPage
     {
         private IMobileServiceTable<Evento> todoTableEvento = App.MobileService.GetTable<Evento>();
+        private readonly ObservableCollection<EventosItem> _listaItemEventos = new ObservableCollection<EventosItem>();
+
         public ObservableCollection<EventosItem> ListaItemEventos
         {
             get
             {
-                return this.list.ItemsSource as ObservableCollection<EventosItem>;
-            }
-            set
-            {
-                this.list.ItemsSource = value;
+                return _listaItemEventos;
             }
         }
         public MainPage()
         {
             InitializeComponent();
-            this.ListaItemEventos = new ObservableCollection<EventosItem>();
+            BindingContext = this;
             this.PopularListaDeEventos();
         }
 
@@ -48,25 +46,28 @@ namespace AppDionisio.Views
         }
         private async Task PopularListaDeEventos()
         {
-
-            this.list.ItemsSource = null;
-            var listaEventos = new ObservableCollection<EventosItem>();
-            this.list.ItemsSource = listaEventos;
+            ListaItemEventos.Clear();
             //TODO: Filtrar...
             var eventos = await todoTableEvento.ToCollectionAsync();
             if (eventos.Any())
             {
+                //var Coordinates = new Coordinates();
+                //var localizacaoAtual = await Coordinates.GetGeolocator();
                 foreach (var item in eventos)
                 {
+                    //var latEvento = Convert.ToDouble(item.Latitude);
+                    //var longEvento = Convert.ToDouble(item.Longitude);
                     var eventoItem = new EventosItem()
                     {
                         IdEvento = item.Id,
                         Nome = item.Nome,
-                        KM = "Calcular ..."
+                        KM =  "1500 km"//Coordinates.Distance(localizacaoAtual.Latitude, localizacaoAtual.Longitude, latEvento, longEvento).ToString() + " KM"
                     };
-                    listaEventos.Add(eventoItem);
+                    ListaItemEventos.Add(eventoItem);
                 }
             }
+            this.list.ItemsSource = null;
+            this.list.ItemsSource = ListaItemEventos;
         }
     }
 }

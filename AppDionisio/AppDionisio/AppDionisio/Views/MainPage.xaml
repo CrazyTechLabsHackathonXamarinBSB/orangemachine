@@ -11,7 +11,7 @@
         <ScrollView>
             <StackLayout>
                 <StackLayout>
-                    <ListView x:Name="list" RowHeight="55" ItemTapped="OnItemSelected">
+                    <ListView RowHeight="55" x:Name="list" ItemsSource="{Binding ListaItemEventos}"  ItemTapped="OnItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
