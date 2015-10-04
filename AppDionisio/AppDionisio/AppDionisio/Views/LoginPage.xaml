@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDionisio.Views.LoginPage" BackgroundColor="#FF6103" Padding="5,10,5,10">
-  <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="15" BackgroundColor="#FFFFFF">
+  <StackLayout IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" 
+               Spacing="15" BackgroundColor="#FFFFFF">
     <StackLayout Padding="10,10,10,10" Orientation="Vertical" BackgroundColor="#FF6103">
       <Image Source="Logo.png" HeightRequest="100" WidthRequest="100"></Image>
     </StackLayout>
@@ -10,19 +11,20 @@
       <StackLayout Orientation="Vertical">
         <StackLayout Padding="10,10,10,5" Orientation="Vertical">
           <Label Text="Login" TextColor="Black"></Label>
-          <Entry x:Name="LoginEntry" Placeholder="Digite seu login" BackgroundColor="#FFFFFF"></Entry>
+          <Entry x:Name="LoginEntry" TextColor="Black" Placeholder="Digite seu login" BackgroundColor="#FFFFFF"></Entry>
         </StackLayout>
         <StackLayout Padding="10,0,10,10" Orientation="Vertical">
           <Label Text="Senha" TextColor="Black" ></Label>
-          <Entry x:Name="SenhaEntry" Placeholder="Digite sua senha" IsPassword="True" BackgroundColor="#FFFFFF"></Entry>
+          <Entry x:Name="SenhaEntry" TextColor="Black" Placeholder="Digite sua senha" IsPassword="True" BackgroundColor="#FFFFFF"></Entry>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10">
-          <Button x:Name="LoginButton"  FontAttributes="Bold" Clicked="LoginButton_OnClicked" BackgroundColor="#FF6103" Text="Logar" HorizontalOptions="FillAndExpand" ></Button>
+        <StackLayout Padding="10,5,10,10">
+          <Button x:Name="LoginButton"  FontAttributes="Bold" Clicked="LoginButton_OnClicked" 
+                  BackgroundColor="#FF6103" Text="Logar" HorizontalOptions="FillAndExpand" ></Button>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10">
+        <StackLayout Padding="10,5,10,10">
           <Button x:Name="RegistrarButton" FontAttributes="Bold" BackgroundColor="Silver" HorizontalOptions="FillAndExpand" Text="Registar" Clicked="RegistrarButton_OnClicked"></Button>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10">
+        <StackLayout Padding="10,5,10,10">
           <Button x:Name="FacebookButton" Image="F.jpg" FontAttributes="Bold" BackgroundColor="#4169E1" Clicked="LoginButton_OnClicked" Text="Facebook" HorizontalOptions="FillAndExpand" ></Button>
         </StackLayout>
         <StackLayout>
