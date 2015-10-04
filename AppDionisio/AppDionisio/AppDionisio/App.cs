@@ -11,7 +11,6 @@ namespace AppDionisio
 {
     public class App : Application
     {
-
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://dionisio.azure-mobile.net/",
             "xXVYABXIPgAfTKpqfKJaVIzrGqLerS25"
